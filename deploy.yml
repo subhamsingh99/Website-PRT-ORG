@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: custom-deployment
+  labels:
+    app: intellipath
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: intellipath
+  template:
+    metadata:
+      labels:
+        app: intellipath
+    spec:
+      containers:
+      - name: cont
+        image: subhamsingh99/image
+        ports:
+        - containerPort: 80
